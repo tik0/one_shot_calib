@@ -1,0 +1,42 @@
+====== ROS ======
+
+ROS is a robot operating system which comes with a lot of handy tools.
+For now, the package ''ros-indigo-desktop'' (without Gazebo) has been tested in combination with ''Ubuntu 14.04.4''.
+This package contains a [[http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20broadcaster%20(C%2B%2B)|tf]] broadcaster and sensor bridges, to get the the project into the ROS world.
+
+===== Prerequisites to Initialize the Workspace =====
+
+  * ''source /opt/ros/indigo/setup.sh''
+  * ''cd ${MUROX_PROJECT}/ros/src''
+  * ''catkin_init_workspace''
+
+===== Transforms and Frames =====
+
+To see the machine fames, first of all the static tranforms can be published and visualized in the following way:
+
+  * Start the static tf's: ''cd ${MUROX_PROJECT}/ros && source devel/setup.sh && catkin_make && roslaunch claas_tf start.launch''
+  * In another console: ''rosrun rviz rviz''
+
+{{ros:rviz.png?1280}}
+
+===== ROS Dissemination  =====
+
+===== Commons  =====
+
+  * [[ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment | Create a ROS Workspace ]]
+  * [[ http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29 | Writing a Simple Publisher and Subscriber ]]
+
+
+===== tf  =====
+
+  * [[ http://wiki.ros.org/tf | tf ]]
+  * [[ http://wiki.ros.org/tf/Tutorials | tf-Tutorials ]]
+  * [[ http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20broadcaster%20(C%2B%2B) | Writing a tf broadcaster ]]
+  * [[ http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20listener%20%28C%2B%2B%29 | Writing a tf listener ]]
+  * [[ http://wiki.ros.org/tf_conversions | tf_conversions ]]
+  * [[ http://wiki.ros.org/tf/Tutorials/Adding%20a%20frame%20%28C%2B%2B%29 | tf: Adding a frame ]]
+
+===== Create Eclipse Programming Environment =====
+
+  * Go to ''${MUROX_ENV}/project/ros/src/build'' (create if it does not exist)
+  * Call something like ''cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=release ..''
